@@ -48,6 +48,19 @@ public class TelefonoController {
         return "telefonos/formulario";
     }
 
+    @GetMapping("/marcas/nueva")
+    public String mostrarFormularioMarca(Model model) {
+        model.addAttribute("marca", new Marca());
+        return "telefonos/formulario_marca";
+    }
+
+    @PostMapping("/marcas/guardar")
+    public String guardarMarca(@ModelAttribute("marca") Marca marca) {
+        telefonoService.guardarMarca(marca);
+        // Redirige al catálogo de teléfonos tras registrar la marca
+        return "redirect:/telefonos";
+    }
+
     //Guardar
     @PostMapping("/guardar")
     public String guardar(@ModelAttribute("telefono") Telefono telefono, @RequestParam("marcaId") Long marcaId) {

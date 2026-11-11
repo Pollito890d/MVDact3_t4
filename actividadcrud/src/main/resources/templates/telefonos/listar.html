@@ -7,9 +7,12 @@
 </head>
 <body class="container py-4">
 
-    <div class="d-flex justify-content-between align-items-center">
+    <div class="d-flex justify-content-between align-items-center mb-4 pb-2 border-bottom">
         <h2>Catálogo de Teléfonos Inteligentes</h2>
-        <a th:href="@{/telefonos/nuevo}" class="btn btn-primary">+ Nuevo Teléfono</a>
+        <div class="d-flex gap-2">
+            <a th:href="@{/telefonos/marcas/nueva}" class="btn btn-primary">+ Nueva Marca</a>
+            <a th:href="@{/telefonos/nuevo}" class="btn btn-primary">+ Nuevo Teléfono</a>
+        </div>
     </div>
 
     <table class="table table-bordered align-middle">

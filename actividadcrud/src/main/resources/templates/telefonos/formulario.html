@@ -30,11 +30,13 @@
                         <input type="number" th:field="*{almacenamientoGb}" class="form-control" placeholder="128, 256, 512" required>
                     </div>
 
-                    <!-- Selección de Marca (Relación ManyToOne) -->
                     <div class="mb-4">
-                        <label class="form-label">Marca:</label>
+                        <div class="d-flex justify-content-between">
+                            <label class="form-label">Marca:</label>
+                            <a th:href="@{/telefonos/marcas/nueva}" class="small text-decoration-none">+ Agregar otra marca</a>
+                        </div>
                         <select name="marcaId" class="form-select" required>
-                            <option value="" disabled th:selected="${telefono.marca == null}">Selecciona una marca...</option>
+                            <option value="" disabled th:selected="${telefono.marca == null}">Selecciona una marca</option>
                             <option th:each="m : ${marcas}" 
                                     th:value="${m.id}" 
                                     th:text="${m.nombre} + ' (' + ${m.paisOrigen} + ')'"
