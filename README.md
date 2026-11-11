@@ -52,30 +52,30 @@ La relación establecida es de **Uno a Muchos (`@OneToMany`)** desde `Marca` hac
 
 ### Captura 1: Operación READ (Listado General con Relación Reflejada)
 
-![Listado General Thymeleaf](./src/main/resources/static/img/listar_telefonos.png)
+![Listado General Thymeleaf](./actividadcrud/src/main/resources/static/img/listar_telefonos.png)
 
 ---
 
 ### Captura 2: Operación CREATE (Formulario y Registro de Marca / Teléfono)
 
-![Crear Teléfono](./src/main/resources/static/img/formulario_nuevo_telefono.png)
+![Crear Teléfono](./actividadcrud/src/main/resources/static/img/formulario_nuevo_telefono.png)
 
 ---
 
 ### Captura 3: Operación UPDATE (Edición de Teléfono)
 
-![Editar Teléfono](./src/main/resources/static/img/editar_telefono.png)
+![Editar Teléfono](./actividadcrud/src/main/resources/static/img/editar_telefono.png)
 
 ---
 
 ### Captura 4: Operación DELETE (Eliminación de Registro)
 
-![Eliminar Teléfono](./src/main/resources/static/img/eliminar_telefono.png)
+![Eliminar Teléfono](./actividadcrud/src/main/resources/static/img/eliminar_telefono.png)
 
 ---
 
 ### Captura 5: Pruebas del Servicio REST en Postman
 
-![Pruebas Postman](./src/main/resources/static/img/peticion_get_postman.png)
+![Pruebas Postman](./actividadcrud/src/main/resources/static/img/peticion_get_postman.png)
 
 
