@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Catálogo de Teléfonos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-4">
+
+    <div class="d-flex justify-content-between align-items-center">
+        <h2>Catálogo de Teléfonos Inteligentes</h2>
+        <a th:href="@{/telefonos/nuevo}" class="btn btn-primary">+ Nuevo Teléfono</a>
+    </div>
+
+    <table class="table table-bordered align-middle">
+        <thead class="table-dark">
+            <tr>
+                <th>ID</th>
+                <th>Modelo</th>
+                <th>Precio</th>
+                <th>Almacenamiento</th>
+                <th>Marca (Relación)</th>
+                <th>País de Marca</th>
+                <th class="text-center">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="tel : ${telefonos}">
+                <td th:text="${tel.id}">1</td>
+                <td class="fw-bold" th:text="${tel.modelo}">Modelo</td>
+                <td th:text="'$' + ${#numbers.formatDecimal(tel.precio, 1, 2)}">$0.00</td>
+                <td th:text="${tel.almacenamientoGb} + ' GB'">128 GB</td>
+                <td><span class="badge text-dark" th:text="${tel.marca != null ? tel.marca.nombre : 'Sin Marca'}">Marca</span></td>
+                <td th:text="${tel.marca != null ? tel.marca.paisOrigen : '-'}">País</td>
+                <td class="text-center">
+                    <a th:href="@{/telefonos/editar/{id}(id=${tel.id})}" class="btn btn-warning">Editar</a>
+                    <a th:href="@{/telefonos/eliminar/{id}(id=${tel.id})}" class="btn btn-danger " onclick="return confirm('¿Seguro que deseas eliminar este teléfono?');">Eliminar</a>
+                </td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(telefonos)}">
+                <td colspan="7" class="text-center text-muted py-3">No hay teléfonos registrados en la base de datos.</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
